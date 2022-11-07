@@ -16,9 +16,10 @@ namespace BookingAPI.Services
             _mapper = mapper;
         }
 
-        public Customer Create(PostCustomer objectValue)
+        public Customer Create(PostCustomer customer)
         {
-            throw new NotImplementedException();
+            var customerToAdd = _mapper.Map<Customer>(customer);
+            return _customerDas.Add(customerToAdd);
         }
 
         public void DeleteById(int id)
@@ -28,12 +29,15 @@ namespace BookingAPI.Services
 
         public IEnumerable<GetCustomer> GetAll()
         {
-            throw new NotImplementedException();
+            var customers = _customerDas.GetAll();
+            var customersToPresent = _mapper.Map<IEnumerable<GetCustomer>>(customers);
+            return customersToPresent;
         }
 
         public Customer GetById(int id)
         {
-            throw new NotImplementedException();
+            var customerOnId = _customerDas.GetById(id);
+            return customerOnId;
         }
 
         public GetCustomer Update(int id, PutCustomer book)

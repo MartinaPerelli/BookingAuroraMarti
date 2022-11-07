@@ -2287,19 +2287,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alessandro\\.nuget\\packages\\": {}
+    "C:\\Users\\aless\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alessandro\\Desktop\\Booking\\BookingAPI\\BookingAPI\\BookingAPI.csproj",
+      "projectUniqueName": "C:\\Users\\aless\\Source\\Repos\\BookingAuroraMarti\\BookingAPI\\BookingAPI\\BookingAPI.csproj",
       "projectName": "BookingAPI",
-      "projectPath": "C:\\Users\\Alessandro\\Desktop\\Booking\\BookingAPI\\BookingAPI\\BookingAPI.csproj",
-      "packagesPath": "C:\\Users\\Alessandro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alessandro\\Desktop\\Booking\\BookingAPI\\BookingAPI\\obj\\",
+      "projectPath": "C:\\Users\\aless\\Source\\Repos\\BookingAuroraMarti\\BookingAPI\\BookingAPI\\BookingAPI.csproj",
+      "packagesPath": "C:\\Users\\aless\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aless\\Source\\Repos\\BookingAuroraMarti\\BookingAPI\\BookingAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Alessandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aless\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

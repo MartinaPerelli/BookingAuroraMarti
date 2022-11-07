@@ -50,8 +50,8 @@ namespace BookingAPI.Services
                 Name = objectValue.Name,
             };
 
-            _apartmentDas.Update(apartment);
-            return _mapper.Map<GetApartment>(apartment);
+            var apartmentUpdated = _apartmentDas.Update(apartment);
+            return _mapper.Map<GetApartment>(apartmentUpdated);
         }
     }
 }

@@ -3,6 +3,7 @@ using BookingAPI.DAL.DAS;
 using BookingAPI.DAL.DAS.Interfaces;
 using BookingAPI.Models.CustomerModels;
 using BookingAPI.Services.Interfaces;
+using BookingAPI.Utilities;
 
 namespace BookingAPI.Services
 {
@@ -19,6 +20,10 @@ namespace BookingAPI.Services
 
         public Customer Create(PostCustomer customer)
         {
+            if(!customer.FiscalCode.isFiscalCodeValid())
+            {
+                throw new ArgumentException("Invalid Fiscal Code");
+            }
             var customerToAdd = _mapper.Map<Customer>(customer);
             return _customerDas.Add(customerToAdd);
         }
@@ -34,6 +39,12 @@ namespace BookingAPI.Services
             var customersToPresent = _mapper.Map<IEnumerable<GetCustomer>>(customers);
             return customersToPresent;
         }
+
+        //public Task<IEnumerable<GetCustomer>> GetAll()
+        //{
+        //    var customers = _customerDas.GetAll();
+        //    return _mapper.Map<Task<IEnumerable<GetCustomer>>>(customers);
+        //}
 
         public Customer GetById(int id)
         {

@@ -100,6 +100,31 @@ namespace BookingAPI.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("BookingAPI.Models.ReviewModels.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ReviewDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("BookingAPI.Models.BookingModels.Booking", b =>
                 {
                     b.HasOne("BookingAPI.Models.ApartmentModels.Apartment", "Apartment")
@@ -115,6 +140,17 @@ namespace BookingAPI.Migrations
                         .IsRequired();
 
                     b.Navigation("Apartment");
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("BookingAPI.Models.ReviewModels.Review", b =>
+                {
+                    b.HasOne("BookingAPI.Models.CustomerModels.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
                 });

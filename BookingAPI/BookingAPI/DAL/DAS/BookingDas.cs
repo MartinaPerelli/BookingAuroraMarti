@@ -1,6 +1,7 @@
 ﻿using BookingAPI.DAL.DAS.Context;
 using BookingAPI.DAL.DAS.Interfaces;
 using BookingAPI.Models.BookingModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookingAPI.DAL.DAS
 {
@@ -13,27 +14,41 @@ namespace BookingAPI.DAL.DAS
         }
         public Booking Add(Booking booking)
         {
-            throw new NotImplementedException();
+            _ctx.Bookings.Add(booking);
+            _ctx.SaveChanges();
+            return _ctx.Bookings.Include(b => b.Apartment).Include(b => b.Customer).Single(b => b.Id == booking.Id);
         }
 
         public void Delete(int idBooking)
         {
-            throw new NotImplementedException();
+            var bookingToDelete = _ctx.Bookings.Single(booking => booking.Id == idBooking);
+            _ctx.SaveChanges();
+
         }
 
         public IEnumerable<Booking> GetAll()
         {
-            throw new NotImplementedException();
+           return _ctx.Bookings.Include(b => b.Apartment);
         }
 
-        public Booking GetById(int idBooking)
+        public Booking? GetById(int idBooking)
         {
-            throw new NotImplementedException();
+            return _ctx.Bookings.Include(booking => booking.Apartment).Include(booking => booking.Customer).SingleOrDefault(booking => booking.Id == idBooking);
         }
 
         public Booking Update(Booking booking)
         {
-            throw new NotImplementedException();
+           _ctx.Entry(booking).State = EntityState.Detached;
+          var bookingToUpdate = GetById(booking.Id);
+
+            bookingToUpdate.StartDate = booking.StartDate;
+            bookingToUpdate.EndDate = booking.EndDate;
+            bookingToUpdate.CustomerId = booking.CustomerId;
+            bookingToUpdate.ApartmentId = booking.ApartmentId;
+
+            _ctx.SaveChanges();
+
+            return bookingToUpdate;
         }
     }
 }

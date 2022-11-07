@@ -20,6 +20,8 @@ builder.Services.AddScoped<IBookingDas, BookingDas>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IApartmentService, ApartmentService>();
 builder.Services.AddScoped<IBookingService, BookingService>();
+builder.Services.AddScoped<IReviewDas,ReviewDas>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 builder.Services.AddDbContext<BookingAMContext>(option =>
                 option.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=BookingAM"));

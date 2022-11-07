@@ -5,7 +5,7 @@ namespace BookingAPI.DAL.DAS.Interfaces
     public interface IBookingDas
     {
         public Booking Add(Booking booking);
-        public Booking GetById(int idBooking);
+        public Booking? GetById(int idBooking);
         public IEnumerable<Booking> GetAll();
         public Booking Update(Booking booking);
 

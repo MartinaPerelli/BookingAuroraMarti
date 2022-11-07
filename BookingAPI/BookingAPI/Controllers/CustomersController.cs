@@ -17,15 +17,22 @@ namespace BookingAPI.Controllers
         [HttpPost]
         public IActionResult CreateCustomer([FromBody] PostCustomer postCustomer)
         {
-            var customerToAdd = _customerService.Create(postCustomer);
-            return CreatedAtAction(nameof(GetCustomerById),new { id = customerToAdd.Id }, customerToAdd);
+            try
+            {
+                var customerToAdd = _customerService.Create(postCustomer);
+                return CreatedAtAction(nameof(GetCustomerById),new { id = customerToAdd.Id }, customerToAdd);
+            }
+            catch(ArgumentException exc)
+            {
+                return BadRequest(exc.Message);
+            }
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var customers = _customerService.GetAll();
-            return Ok(customers);
+         
+            return Ok(_customerService.GetAll());
         }
 
         [HttpGet("{id}")]

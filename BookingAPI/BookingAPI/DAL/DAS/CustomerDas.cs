@@ -14,17 +14,21 @@ namespace BookingAPI.DAL.DAS
 
         public Customer Add(Customer customer)
         {
-            throw new NotImplementedException();
+            var customerToAdd = _ctx.Customers.Add(customer);
+            _ctx.SaveChanges();
+            return customerToAdd.Entity;
         }
 
         public IEnumerable<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            var customers = _ctx.Customers;
+            return customers;
         }
 
-        public Customer GetById(int idCustomer)
+        public Customer? GetById(int idCustomer)
         {
-            throw new NotImplementedException();
+            var customer = _ctx.Customers.SingleOrDefault(customer => customer.Id == idCustomer);
+            return customer;
         }
     }
 }

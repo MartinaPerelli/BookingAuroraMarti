@@ -7,7 +7,7 @@
         public IEnumerable<TGet> GetAll();
         public T GetById(int id);
 
-        public TGet Update(int id, TPut book);
+        public TGet Update(int id, TPut objectValue);
 
         public void DeleteById(int id);
 

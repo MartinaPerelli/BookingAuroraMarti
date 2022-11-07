@@ -36,7 +36,7 @@ namespace BookingAPI.Services
             throw new NotImplementedException();
         }
 
-        public GetCustomer Update(int id, PutCustomer book)
+        public GetCustomer Update(int id, PutCustomer objectValue)
         {
             throw new NotImplementedException();
         }

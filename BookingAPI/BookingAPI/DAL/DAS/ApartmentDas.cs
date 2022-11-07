@@ -1,6 +1,7 @@
 ﻿using BookingAPI.DAL.DAS.Context;
 using BookingAPI.DAL.DAS.Interfaces;
 using BookingAPI.Models.ApartmentModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookingAPI.DAL.DAS
 {
@@ -15,22 +16,33 @@ namespace BookingAPI.DAL.DAS
 
         public Apartment Add(Apartment apartment)
         {
-            throw new NotImplementedException();
+            _ctx.Apartments.Add(apartment);
+            _ctx.SaveChanges();
+            return apartment;
         }
 
         public IEnumerable<Apartment> GetAll()
         {
-            throw new NotImplementedException();
+            return _ctx.Apartments;
         }
 
-        public Apartment GetById(int idApartment)
+        public Apartment? GetById(int idApartment)
         {
-            throw new NotImplementedException();
+            return _ctx.Apartments.SingleOrDefault(apartment => apartment.Id == idApartment);
         }
 
         public Apartment Update(Apartment apartment)
         {
-            throw new NotImplementedException();
+            _ctx.Entry(apartment).State = EntityState.Detached;
+            var apartmentToUpdate = GetById(apartment.Id);
+
+            apartmentToUpdate.Address = apartment.Address;
+            apartmentToUpdate.Name = apartment.Name;
+            apartmentToUpdate.Sqm = apartment.Sqm;
+
+            _ctx.SaveChanges();
+
+            return apartmentToUpdate;
         }
     }
 }

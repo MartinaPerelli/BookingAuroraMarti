@@ -60,3 +60,5 @@ C:\Users\Alessandro\Desktop\Booking\BookingAPI\BookingAPI\obj\Debug\net6.0\refin
 C:\Users\Alessandro\Desktop\Booking\BookingAPI\BookingAPI\obj\Debug\net6.0\BookingAPI.pdb
 C:\Users\Alessandro\Desktop\Booking\BookingAPI\BookingAPI\obj\Debug\net6.0\BookingAPI.genruntimeconfig.cache
 C:\Users\Alessandro\Desktop\Booking\BookingAPI\BookingAPI\obj\Debug\net6.0\ref\BookingAPI.dll
+C:\Users\Alessandro\Desktop\Booking\BookingAPI\BookingAPI\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Alessandro\Desktop\Booking\BookingAPI\BookingAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

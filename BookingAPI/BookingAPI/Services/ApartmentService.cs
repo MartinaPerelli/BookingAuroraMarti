@@ -17,7 +17,8 @@ namespace BookingAPI.Services
 
         public Apartment Create(PostApartment objectValue)
         {
-            throw new NotImplementedException();
+            var apartmentToAdd = _mapper.Map<Apartment>(objectValue);
+            return _apartmentDas.Add(apartmentToAdd);
         }
 
         public void DeleteById(int id)
@@ -27,17 +28,30 @@ namespace BookingAPI.Services
 
         public IEnumerable<GetApartment> GetAll()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<List<GetApartment>>(_apartmentDas.GetAll());
         }
 
         public Apartment GetById(int id)
         {
-            throw new NotImplementedException();
+            var apartment = _apartmentDas.GetById(id);
+            if(apartment == null)
+            {
+                throw new ArgumentException($"No apartment found with such Id {id}");
+            }
+
+            return apartment;
         }
 
-        public GetApartment Update(int id, PutApartment book)
+        public GetApartment Update(int id, PutApartment objectValue)
         {
-            throw new NotImplementedException();
+            var apartment = new Apartment
+            {
+                Id = id,
+                Name = objectValue.Name,
+            };
+
+            _apartmentDas.Update(apartment);
+            return _mapper.Map<GetApartment>(apartment);
         }
     }
 }

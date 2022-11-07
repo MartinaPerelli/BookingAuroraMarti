@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "BquYf9BWE87gHETEfr9kGdJb6ywjRw5iNdIMUEf9TN8xk36572/EQe4LEFnwW6ofUv8D+rqbpvdcZGVdPozIFg==",
+  "dgSpecHash": "VX8MHpcnZDUHH4rNWfK6y/4IDL2WDfMVPe322JQnOwwmD1f7ZWNOwbUvmfdxRYtBWDiUDgPTERxANqQg5kfMTQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Alessandro\\Desktop\\Booking\\BookingAPI\\BookingAPI\\BookingAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Alessandro\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Alessandro\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\Alessandro\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\Alessandro\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Alessandro\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Alessandro\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Alessandro\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Alessandro\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",

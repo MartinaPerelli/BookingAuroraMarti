@@ -2,7 +2,7 @@
 
 namespace BookingAPI.Models.BookingModels
 {
-    public class GetModel
+    public class GetBooking
     {
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
